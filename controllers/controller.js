@@ -11,7 +11,7 @@ const getLocationAndWeatherController = async (req, res) => {
 
         console.log(`Client IP: ${ip}`);
 
-        const geoResponse = await axios.get(`https://apiip.net/api/check?ip=${ip}&accessKey=${process.env.IP_TOKEN}`);
+        const geoResponse = await axios.get(`http://ip-api.com/json/${ip}`);
         const location = geoResponse.data.city || 'Unknown';
 
         console.log(`Geo Response: ${JSON.stringify(geoResponse.data)}`);
