@@ -8,7 +8,9 @@ app.use(express.json());
 
 app.use("/api", routes)
 
-app.get("/", () => console.log(`hello world`))
+app.get("/", (req,res) => {
+    res.status(200).json("Hello world")
+})
 
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 
